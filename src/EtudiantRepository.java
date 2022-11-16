@@ -1,17 +1,21 @@
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class EtudiantRepository {
-	
-	
-	void add(Etudiant E) throws SQLException
-	{
+public class EtudiantRepository implements IEtudiantRepository {
+	IdbConnection db;
+	public EtudiantRepository(IdbConnection db){
+		this.db = db;
+	}
 
-		DBConnection BD= DBConnection.getDBConnection();
-		Connection connect=BD.getConn();
+	
+	public void add(Etudiant E) throws SQLException
+	{
+ 
+		Connection connect=db.getConn();
 		
 		Statement stmt = connect.createStatement();
 		String sql = "INSERT into etudiant values (" + E.getMatricule() + ",'" + E.getNom() + "','" + E.getPrenom() + "','" + E.getEmail() + "'," +E.getNbLivreMensuel_Autorise() + "," +E.getNbLivreEmprunte() + "," +E.getId_universite()+")";
@@ -26,10 +30,9 @@ public class EtudiantRepository {
 	 }
 
 
-	boolean Exists(String email) throws SQLException	
-	{
-		DBConnection BD= DBConnection.getDBConnection();
-		Connection connect=BD.getConn();
+	public boolean Exists(String email) throws SQLException	
+	{ 
+		Connection connect=db.getConn();
 		
 		Statement stmt = connect.createStatement();
 		String sql = "select * from etudiant where email='"+ email+"'";
@@ -45,10 +48,9 @@ public class EtudiantRepository {
 		return false;
 	}
 	
-	boolean Exists(int mat) throws SQLException	
-	{
-		DBConnection BD= DBConnection.getDBConnection();
-		Connection connect=BD.getConn();
+	public boolean Exists(int mat) throws SQLException	
+	{  
+		Connection connect=db.getConn();
 		
 		Statement stmt = connect.createStatement();
 		String sql = "select * from etudiant where matricule="+ mat;

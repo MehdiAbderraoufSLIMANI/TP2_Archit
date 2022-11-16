@@ -1,8 +1,9 @@
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DBConnection {
+public class DBConnection implements IdbConnection{
 	   
 		private String BDD = "nomBD";
 		private String url = "jdbc:mysql://localhost:3306/" + BDD;
@@ -11,27 +12,23 @@ public class DBConnection {
 	    private Connection conn;
 		private static DBConnection dbc;
 	   
-	    private DBConnection() throws SQLException {
-			conn=DriverManager.getConnection(url, user,passwd);
-		}
+	    private DBConnection(){}
 
 	    
-	    public Connection getConn() {
+	    public Connection getConn() throws SQLException {
+			conn=DriverManager.getConnection(url, user,passwd);
 			return conn;
 		}
 
 		public static DBConnection getDBConnection(){
 			if(dbc == null){
-				try {
+			 
 					dbc = new DBConnection();
-				} catch (SQLException e) {
-					 
-					e.printStackTrace();
-				}
+		 
 			}
 			return dbc;
 		} 
 
-		
+ 
 	
 }

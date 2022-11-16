@@ -1,15 +1,25 @@
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+
+
 public class EtudiantService {
 	
-	
+	private IEtudiantRepository StudRep;
+	private IUniversiteRepository UnivRep;
+
+	public EtudiantService(IEtudiantRepository StudRep,IUniversiteRepository UnivRep){
+		this.UnivRep = UnivRep;
+		this.StudRep = StudRep;
+	}
+
 	boolean inscription (int matricule, String nom, String prenom, String email,String pwd, int id_universite) throws SQLException	
 	{
-		EtudiantRepository StudRep= new EtudiantRepository();
-	    UniversiteRepository UnivRep= new UniversiteRepository();
+		 
 	    Etudiant stud = new Etudiant(matricule, nom, prenom, email,pwd,id_universite);
 	    Universite univ=UnivRep.GetById(id_universite);
 	    

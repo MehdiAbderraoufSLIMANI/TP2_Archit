@@ -1,17 +1,22 @@
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class UniversiteRepository {
+public class UniversiteRepository implements IUniversiteRepository {
 	
+	IdbConnection db;
 	
-	Universite GetById(int universityId) throws SQLException {
-		
-		DBConnection BD= DBConnection.getDBConnection();
-		Connection connect=BD.getConn(); 
+	public UniversiteRepository(IdbConnection db) {
+		this.db=db;
+	}
+	@Override
+	public Universite GetById(int universityId) throws SQLException {
+		 
+		Connection connect=db.getConn(); 
 		Statement stmt = connect.createStatement();
 		System.out.println("LogBD : d�but recherche de id universit� dans la base de donn�e");
 		
