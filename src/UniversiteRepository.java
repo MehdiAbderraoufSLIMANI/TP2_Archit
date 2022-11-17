@@ -36,31 +36,14 @@ public class UniversiteRepository implements IUniversiteRepository {
 	}
 
 	public int initialiseNmbLivre(Universite univ){
-
-		if (univ.getPack() == TypePackage.Standard)
-		{
-			Package pac = new Standard(); 
-			return pac.getNmbLivre();
-		}
-		else if (univ.getPack() == TypePackage.Premium)
-		{
-			Package pac = new Premium(); 
-			return pac.getNmbLivre();
-		}
-		return 0; 
+		Package pac = new DetermineThePackage().typeOfPackage(univ.getPack());
+		 
+		return pac.getBoune();
 	}
 	
 	public int addingBounes(Universite univ) {
-		if (univ.getPack() == TypePackage.Standard)
-		{
-			Package pac = new Standard(); 
+		Package pac =  new DetermineThePackage().typeOfPackage(univ.getPack());
 			return pac.getBoune();
-		}
-		else if (univ.getPack() == TypePackage.Premium)
-		{
-			Package pac = new Premium(); 
-			return pac.getBoune();
-		}
-		return 0; 
+		
 	}
 }
