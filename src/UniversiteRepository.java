@@ -39,11 +39,13 @@ public class UniversiteRepository implements IUniversiteRepository {
 
 		if (univ.getPack() == TypePackage.Standard)
 		{
-			 return 10;
+			Package pac = new Standard(); 
+			return pac.getNmbLivre();
 		}
 		else if (univ.getPack() == TypePackage.Premium)
 		{
-			return(10*2);
+			Package pac = new Premium(); 
+			return pac.getNmbLivre();
 		}
 		return 0; 
 	}
@@ -51,11 +53,13 @@ public class UniversiteRepository implements IUniversiteRepository {
 	public int addingBounes(Universite univ) {
 		if (univ.getPack() == TypePackage.Standard)
 		{
-			 return 5;
+			Package pac = new Standard(); 
+			return pac.getBoune();
 		}
 		else if (univ.getPack() == TypePackage.Premium)
 		{
-			return 10;
+			Package pac = new Premium(); 
+			return pac.getBoune();
 		}
 		return 0; 
 	}
