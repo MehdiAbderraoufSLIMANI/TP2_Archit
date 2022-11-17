@@ -33,6 +33,19 @@ public class UniversiteRepository implements IUniversiteRepository {
 		return u;	
 	
 		
-	}	
+	}
+
+	public int initialiseNmbLivre(Universite univ){
+
+		if (univ.getPack() == TypePackage.Standard)
+		{
+			 return 10;
+		}
+		else if (univ.getPack() == TypePackage.Premium)
+		{
+			return(10*2);
+		}
+		return 0; 
+	}
 	
 }

@@ -12,48 +12,35 @@ public class EtudiantService {
 	private IEtudiantRepository StudRep;
 	private IUniversiteRepository UnivRep;
 	private IJournal journal;
-	public EtudiantService(IEtudiantRepository StudRep,IUniversiteRepository UnivRep,IJournal journal){
+	private Etudiant stud; 
+	public EtudiantService(IEtudiantRepository StudRep,IUniversiteRepository UnivRep,IJournal journal, Etudiant stud){
 		this.UnivRep = UnivRep;
 		this.StudRep = StudRep;
 		this.journal = journal;
+		this.stud = stud;
 	}
 
-	boolean inscription (int matricule, String nom, String prenom, String email,String pwd, int id_universite) throws SQLException	
+	boolean inscription () throws SQLException	
 	{
 		 
-	    Etudiant stud = new Etudiant(matricule, nom, prenom, email,pwd,id_universite);
-	    Universite univ=UnivRep.GetById(id_universite);
-	    journal.outPut_Msg("Log: debut de l'opiration d'ajout de l'etudiant avec matricule "+matricule);
+	  //  Etudiant stud = new Etudiant(matricule, nom, prenom, email,pwd,id_universite);
+	    Universite univ=UnivRep.GetById(stud.getId_universite());
+	    journal.outPut_Msg("Log: debut de l'opiration d'ajout de l'etudiant avec matricule "+stud.getMatricule());
 	   
 	    
-	    if(email == null || email.length() == 0)
+	    if(StudRep.correctMailAndMat(stud))
 	    {
 	    	return false;
 	    }
 	    
-	    if (StudRep.Exists(matricule))
-	    {
-	        return false;
-	    }
-	    
-		if (StudRep.Exists(email))
-	    {
-	        return false;
-	    }
+	   
 		
-		
-		
-		 if (univ.getPack() == TypePackage.Standard)
-	     {
-	          stud.setNbLivreMensuel_Autorise(10);
-	     }
-	     else if (univ.getPack() == TypePackage.Premium)
-	     {
-	    	 stud.setNbLivreMensuel_Autorise(10*2);
-	     }                           
+		int nmbDeLiver = ((UniversiteRepository)UnivRep).initialiseNmbLivre(UnivRep.GetById(stud.getId_universite()));
+		stud.setNbLivreMensuel_Autorise(nmbDeLiver);
+		                      
 	     
 		 StudRep.add(stud);
-		 journal.outPut_Msg("Log: Fin de l'opiration d'ajout de l'utudiant avec matricule "+matricule);
+		 journal.outPut_Msg("Log: Fin de l'opiration d'ajout de l'utudiant avec matricule "+stud.getMatricule());
 		 
 		 return true;
 	    

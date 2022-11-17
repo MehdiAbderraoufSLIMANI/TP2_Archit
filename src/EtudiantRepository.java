@@ -71,4 +71,11 @@ public class EtudiantRepository implements IEtudiantRepository {
 		return false;
 	}
 
+	public boolean correctMailAndMat(Etudiant etud) throws SQLException{
+		String  mail = etud.getEmail();
+		int mat = etud.getMatricule();
+		return Exists(mat)||Exists(mail)|| mail == null || mail.length() == 0;
+
+	}
+
 }

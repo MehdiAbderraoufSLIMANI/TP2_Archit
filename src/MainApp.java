@@ -13,11 +13,11 @@ public class MainApp {
 		IdbConnection db=DBConnection.getDBConnection();
 		IUniversiteRepository UnivRep=new UniversiteRepository(db,journal);
 		IEtudiantRepository StudRep=new EtudiantRepository(db,journal);
-		
+		Etudiant stud = new Etudiant(2, "mahdi", "slimani", "mahdisil@gmail","xxxx", 123);
 		//commentaire  
-		EtudiantService serv=new EtudiantService(StudRep, UnivRep,journal);
+		EtudiantService serv=new EtudiantService(StudRep, UnivRep,journal,stud);
 		try {
-			serv.inscription(2, "mahdi", "slimani", "mahdisil@gmail","xxxx", 123);
+			serv.inscription();
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
