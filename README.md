@@ -7,3 +7,6 @@ empêcher les classes les plus stables (haut niveau) de dépendre de classes moi
 - on peut ajouter un interface 'IEtudiant' pour éviter la declaration d'un nouvel étudiant dans la class 'EtudiantService'
 - on peut mettre les méthodes de vérifiecation de format de l’email, la vérifiecation de l’existence de l’email et du matricule dans la classe 'EtudiantRepository' car elle est liée aux méthodes des étudiants
 - on peut mettre les méthodes de initialise le nombre de livre mensuel autorisé dans la classe 'UniversiteRepository' car elle est liée aux méthodes des universite
+
+# question 15 
+les deux fonctionnalités utilisent if statement pour déterminer le type de package de l'université, et ce n'est pas bon car si nous voulons ajouter un nouveau package, nous devons apporter des modifications à la classe 'UniversiteRepository' et cela va casser l'ocp(break the open closed principle)
