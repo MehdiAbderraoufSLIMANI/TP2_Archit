@@ -5,15 +5,19 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		IJournal journal = new JournalAllMethods();
+		IJournal journal1 = new JournalDateClassMessages();
+		IJournal journal2 = new JournalFichierMessages();
+		((JournalAllMethods) journal).ajouterjournal(journal1);
+		((JournalAllMethods) journal).ajouterjournal(journal2);
 		IdbConnection db=DBConnection.getDBConnection();
-		IUniversiteRepository UnivRep=new UniversiteRepository(db);
-		IEtudiantRepository StudRep=new EtudiantRepository(db);
-
+		IUniversiteRepository UnivRep=new UniversiteRepository(db,journal);
+		IEtudiantRepository StudRep=new EtudiantRepository(db,journal);
+		
 		//commentaire  
-		EtudiantService serv=new EtudiantService(StudRep, UnivRep);
+		EtudiantService serv=new EtudiantService(StudRep, UnivRep,journal);
 		try {
-			serv.inscription(2, "Guendouziiiii", "wassila", "guen@gmail.com","xxxx", 1);
+			serv.inscription(2, "mahdi", "slimani", "mahdisil@gmail","xxxx", 123);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

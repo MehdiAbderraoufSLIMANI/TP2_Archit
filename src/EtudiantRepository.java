@@ -7,8 +7,10 @@ import java.sql.Statement;
 
 public class EtudiantRepository implements IEtudiantRepository {
 	IdbConnection db;
-	public EtudiantRepository(IdbConnection db){
+	private IJournal journal;
+	public EtudiantRepository(IdbConnection db,IJournal journal){
 		this.db = db;
+		this.journal = journal;
 	}
 
 	
@@ -22,9 +24,10 @@ public class EtudiantRepository implements IEtudiantRepository {
 		int rs = stmt.executeUpdate(sql);
 		
 		if (rs == 1){
-				System.out.println("log : ajout dans la BD r�ussi de l'�tudiant  du Matricule" + E.getMatricule());
+			journal.outPut_Msg("log : ajout dans la BD r�ussi de l'�tudiant  du Matricule" + E.getMatricule());
 			}else if (rs == 0){
-				System.out.println("log : Echec de l'ajout dans la BD de l'�tudiant  du Matricule" + E.getMatricule());
+			journal.outPut_Msg("log : Echec de l'ajout dans la BD de l'�tudiant  du Matricule" + E.getMatricule());
+				 
 			}
 		connect.close();
 	 }
@@ -36,14 +39,15 @@ public class EtudiantRepository implements IEtudiantRepository {
 		
 		Statement stmt = connect.createStatement();
 		String sql = "select * from etudiant where email='"+ email+"'";
+		//boolean rs = stmt.execute(sql);
 		boolean rs = stmt.executeQuery(sql).next();
 		
 		if (rs){
-			System.out.println("logBD--- :email existe dans la BD  " + email);
+			journal.outPut_Msg("logBD--- :email existe dans la BD  " + email);
 			connect.close();
 			return true;
 			}
-		System.out.println("logBD--- : email n'existe pas " + email);	
+		journal.outPut_Msg("logBD--- : email n'existe pas " + email);
 		connect.close();
 		return false;
 	}
@@ -54,15 +58,15 @@ public class EtudiantRepository implements IEtudiantRepository {
 		
 		Statement stmt = connect.createStatement();
 		String sql = "select * from etudiant where matricule="+ mat;
-		
+		//boolean rs = stmt.execute(sql);
 		boolean rs = stmt.executeQuery(sql).next();
 	 
 		if (rs){
-			System.out.println("logBD--- :etudiant avec ce matricule existe d�ja dans la BD  " + mat);
+			journal.outPut_Msg("logBD--- :etudiant avec ce matricule existe d�ja dans la BD  " + mat);
 			connect.close();
 			return true;
 			}
-		System.out.println("logBD----: etudiant avec ce matricule n'existe pas " + mat);	
+		journal.outPut_Msg("logBD----: etudiant avec ce matricule n'existe pas " + mat);	
 		connect.close();
 		return false;
 	}
