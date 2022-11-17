@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class DBConnection implements IdbConnection{
 	   
-		private String BDD = "nomBD";
+		private String BDD = "nombd";
 		private String url = "jdbc:mysql://localhost:3306/" + BDD;
 		private String user = "root";
 		private String passwd = "";

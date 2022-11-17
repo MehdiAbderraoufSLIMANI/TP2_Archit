@@ -25,7 +25,7 @@ public class UniversiteRepository implements IUniversiteRepository {
 		rs.next();	
 		TypePackage p=TypePackage.valueOf(rs.getString(3));
 		Universite u = new Universite (rs.getInt(1),rs.getString(2),p);
-			
+		 
 		System.out.println("LogBD : universit� r�cup�r�e");
 		
 		connect.close();

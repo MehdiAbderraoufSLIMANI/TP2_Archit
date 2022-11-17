@@ -23,7 +23,7 @@ public class EtudiantService {
 	    Etudiant stud = new Etudiant(matricule, nom, prenom, email,pwd,id_universite);
 	    Universite univ=UnivRep.GetById(id_universite);
 	    
-	    System.out.println("Log: d�but de l'op�ration d'ajout de l'�tudiant avec matricule "+matricule);
+	    System.out.println("Log: debut de l'opiration d'ajout de l'etudiant avec matricule "+matricule);
 	    
 	    if(email == null || email.length() == 0)
 	    {
@@ -52,7 +52,7 @@ public class EtudiantService {
 	     }                           
 	     
 		 StudRep.add(stud);
-		 System.out.println("Log: Fin de l'op�ration d'ajout de l'�tudiant avec matricule "+matricule);
+		 System.out.println("Log: Fin de l'opiration d'ajout de l'utudiant avec matricule "+matricule);
 		 return true;
 	    
 		

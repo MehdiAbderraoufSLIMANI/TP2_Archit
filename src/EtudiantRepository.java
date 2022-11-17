@@ -1,7 +1,7 @@
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -36,7 +36,7 @@ public class EtudiantRepository implements IEtudiantRepository {
 		
 		Statement stmt = connect.createStatement();
 		String sql = "select * from etudiant where email='"+ email+"'";
-		boolean rs = stmt.execute(sql);
+		boolean rs = stmt.executeQuery(sql).next();
 		
 		if (rs){
 			System.out.println("logBD--- :email existe dans la BD  " + email);
@@ -54,8 +54,9 @@ public class EtudiantRepository implements IEtudiantRepository {
 		
 		Statement stmt = connect.createStatement();
 		String sql = "select * from etudiant where matricule="+ mat;
-		boolean rs = stmt.execute(sql);
 		
+		boolean rs = stmt.executeQuery(sql).next();
+	 
 		if (rs){
 			System.out.println("logBD--- :etudiant avec ce matricule existe d�ja dans la BD  " + mat);
 			connect.close();
