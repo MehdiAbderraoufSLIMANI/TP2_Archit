@@ -48,4 +48,15 @@ public class UniversiteRepository implements IUniversiteRepository {
 		return 0; 
 	}
 	
+	public int addingBounes(Universite univ) {
+		if (univ.getPack() == TypePackage.Standard)
+		{
+			 return 5;
+		}
+		else if (univ.getPack() == TypePackage.Premium)
+		{
+			return 10;
+		}
+		return 0; 
+	}
 }

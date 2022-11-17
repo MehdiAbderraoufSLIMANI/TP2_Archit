@@ -23,8 +23,11 @@ public class Etudiant {
 			this.pwd = pwd;
 			this.id_universite = id_universite;
 		}
-
-
+		
+		public void AddBonus(int bonus) {
+			this.nbLivreMensuel_Autorise +=bonus;
+		}
+		
 		public int getMatricule() {
 			return matricule;
 		}

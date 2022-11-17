@@ -1,6 +1,8 @@
 
 import java.sql.SQLException;
 
+import javax.print.DocFlavor.INPUT_STREAM;
+
 public class MainApp {
 
 	public static void main(String[] args) {
@@ -13,13 +15,23 @@ public class MainApp {
 		IdbConnection db=DBConnection.getDBConnection();
 		IUniversiteRepository UnivRep=new UniversiteRepository(db,journal);
 		IEtudiantRepository StudRep=new EtudiantRepository(db,journal);
-		Etudiant stud = new Etudiant(2, "mahdi", "slimani", "mahdisil@gmail","xxxx", 123);
+		Etudiant stud = new Etudiant(13, "cib", "aawa", "onawa@gmail","xxxx",123);
+		
+		
 		//commentaire  
 		EtudiantService serv=new EtudiantService(StudRep, UnivRep,journal,stud);
 		try {
 			serv.inscription();
 			
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		try {
+			serv.addBonus();
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

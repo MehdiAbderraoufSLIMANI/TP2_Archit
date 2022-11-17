@@ -1,6 +1,7 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class EtudiantService {
 	{
 		 
 	  //  Etudiant stud = new Etudiant(matricule, nom, prenom, email,pwd,id_universite);
-	    Universite univ=UnivRep.GetById(stud.getId_universite());
+	   // Universite univ=UnivRep.GetById(stud.getId_universite());
 	    journal.outPut_Msg("Log: debut de l'opiration d'ajout de l'etudiant avec matricule "+stud.getMatricule());
 	   
 	    
@@ -36,23 +37,34 @@ public class EtudiantService {
 	   
 		
 		int nmbDeLiver = ((UniversiteRepository)UnivRep).initialiseNmbLivre(UnivRep.GetById(stud.getId_universite()));
-		stud.setNbLivreMensuel_Autorise(nmbDeLiver);
-		                      
-	     
+		stud.setNbLivreMensuel_Autorise(nmbDeLiver);                      
+		
+		
 		 StudRep.add(stud);
 		 journal.outPut_Msg("Log: Fin de l'opiration d'ajout de l'utudiant avec matricule "+stud.getMatricule());
+		 
+		
 		 
 		 return true;
 	    
 		
 	}
 	
+	public void addBonus() throws SQLException {
+		 int nmbDebonus = ((UniversiteRepository)UnivRep).addingBounes(UnivRep.GetById(stud.getId_universite()));
+		 ArrayList<Etudiant> etudiants = GetEtudiantParUniversitye();
+		 
+		 for(Etudiant e : etudiants) {
+			 e.AddBonus(nmbDebonus);
+			
+		 }
+		 journal.outPut_Msg("bonus added");
+	}
 	
 	
 
-public ArrayList<Etudiant> GetEtudiantParUniversitye()
-{
-    //...
+public ArrayList<Etudiant> GetEtudiantParUniversitye() throws SQLException
+{	
 	return new ArrayList<>(4);
 }
 
