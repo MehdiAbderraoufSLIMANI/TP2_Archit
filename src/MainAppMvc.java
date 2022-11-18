@@ -1,3 +1,17 @@
+import Controleur.ControleurInscription;
+import Controleur.IViewInscription;
+import Journal.IJournal;
+import Journal.JournalAllMethods;
+import Journal.JournalDateClassMessages;
+import Journal.JournalFichierMessages;
+import Repos.EtudiantRepository;
+import Repos.IdbConnection;
+import Repos.UniversiteRepository;
+import ServiceEtude.EtudiantService;
+import ServiceEtude.IEtudiantRepository;
+import ServiceEtude.IUniversiteRepository;
+import View.ViewInscription;
+import DataBaseCon.DBConnection;
 
 public class MainAppMvc {
 
