@@ -14,13 +14,16 @@ public class EtudiantService {
 	private IUniversiteRepository UnivRep;
 	private IJournal journal;
 	private Etudiant stud; 
-	public EtudiantService(IEtudiantRepository StudRep,IUniversiteRepository UnivRep,IJournal journal, Etudiant stud){
+	public EtudiantService(IEtudiantRepository StudRep,IUniversiteRepository UnivRep,IJournal journal){
 		this.UnivRep = UnivRep;
 		this.StudRep = StudRep;
 		this.journal = journal;
-		this.stud = stud;
 	}
 
+	public void setEtudiant(Etudiant stud) {
+		this.stud = stud;
+	}
+	
 	boolean inscription () throws SQLException	
 	{
 		 

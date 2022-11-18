@@ -2,35 +2,26 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 public class ControleurInscription implements ActionListener {
-	private ViewInscription vi;
-	public ControleurInscription( ViewInscription viewInscription ) {
+	private IViewInscription vi;
+	private EtudiantService serv;
+	public ControleurInscription( IViewInscription viewInscription ,EtudiantService serv) {
 	 
 		this.vi = viewInscription;
 		vi.setactionListener(this);
-		
+		this.serv = serv;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
 		if(e.getSource() == vi.Submit()) {
-		
-		IJournal journal = new JournalAllMethods();
-		IJournal journal1 = new JournalDateClassMessages();
-		IJournal journal2 = new JournalFichierMessages();
-		((JournalAllMethods) journal).ajouterjournal(journal1);
-		((JournalAllMethods) journal).ajouterjournal(journal2);
-		IdbConnection db=DBConnection.getDBConnection();
-		IUniversiteRepository UnivRep=new UniversiteRepository(db,journal);
-		IEtudiantRepository StudRep=new EtudiantRepository(db,journal);
 
-		
 		Etudiant stud = new Etudiant(vi.getMatricule(),vi.getNom(),vi.getPrenom(),vi.getEmail(),vi.getPwd(),vi.getId_universite());
 		
 		
-		
+		 serv.setEtudiant(stud);
 		 
-		EtudiantService serv=new EtudiantService(StudRep, UnivRep,journal,stud);
+		
 	
 			try {
 				serv.inscription();

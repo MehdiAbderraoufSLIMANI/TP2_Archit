@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.security.MessageDigest;
 
 import javax.swing.*;
-public class ViewInscription extends JFrame{
+public class ViewInscription extends JFrame implements IViewInscription{
 	private JTextField textfield_nom ;
 	private JTextField textfield_prenom ;
 	private JTextField textfield_matricule ;
