@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import Repos.IdbConnection;
+
 public class DBConnection implements IdbConnection{
 	   
 		private String BDD = "nombd";

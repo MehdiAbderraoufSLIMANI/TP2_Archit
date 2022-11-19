@@ -19,25 +19,50 @@ public class ControleurInscription implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		if(e.getSource() == vi.Submit()) {
+			System.out.println(vi.getMatricule().isEmpty());
+			if(vi.getMatricule().isEmpty()||  vi.getNom().isEmpty()||vi.getPrenom().isEmpty()||vi.getEmail().isEmpty()||vi.getPwd().isEmpty()||vi.getId_universite().isEmpty()) {
+				vi.setMessageBox("Fill up all the fields !!");
+			}else{
+ try {
+	 Integer.parseInt(vi.getMatricule());
+} catch (Exception e2) {
+	vi.setMessageBox("Matricule has to be a number !!");
+	return;
+}
 
-		Etudiant stud = new Etudiant(vi.getMatricule(),vi.getNom(),vi.getPrenom(),vi.getEmail(),vi.getPwd(),vi.getId_universite());
-		
+ try {
+	 Integer.parseInt( vi.getId_universite());
+} catch (Exception e2) {
+	vi.setMessageBox("Id universite has to be a number !!");
+	return;
+}
+				
+		Etudiant stud = new Etudiant(Integer.parseInt(vi.getMatricule()),vi.getNom(),vi.getPrenom(),vi.getEmail(),vi.getPwd(), Integer.parseInt( vi.getId_universite()));
+			
 		
 		 serv.setEtudiant(stud);
 		 
 		
 	
-			try {
-				serv.inscription();
-			} catch (SQLException e1) {
+		 
+				try {
+					serv.inscription();
+
+				} catch (SQLException e1) {
+					
+					 if(e1.getErrorCode() ==1251) {//the data base is down
+							vi.setMessageBox("the data base is down please try later"); 
+					 }else { 
+					vi.setMessageBox("there is no universty with that names !!");
+					}
+					return;
+				}
+				vi.delete_info();
+				vi.setMessageBox("Done !");	 
 			
-				e1.printStackTrace();
+
+			
 			}
-			
-			vi.delete_info();
-			vi.setMessageBox("Done !");
-			
-	
 		
 	}else if(e.getSource() == vi.annuler()) {
 		

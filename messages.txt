@@ -221,3 +221,89 @@ LogBD : d�but recherche de id universit� dans la base de donn�e
 LogBD : universit� r�cup�r�e
 log : ajout dans la BD r�ussi de l'�tudiant  du Matricule15245
 Log: Fin de l'opiration d'ajout de l'utudiant avec matricule 15245
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 453
+logBD----: etudiant avec ce matricule n'existe pas 453
+logBD--- : email n'existe pas ddd@gmail.com
+LogBD : d�but recherche de id universit� dans la base de donn�e
+LogBD : universit� r�cup�r�e
+log : ajout dans la BD r�ussi de l'�tudiant  du Matricule453
+Log: Fin de l'opiration d'ajout de l'utudiant avec matricule 453
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 453
+logBD--- :etudiant avec ce matricule existe d�ja dans la BD  453
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 453
+logBD--- :etudiant avec ce matricule existe d�ja dans la BD  453
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 4513
+logBD----: etudiant avec ce matricule n'existe pas 4513
+logBD--- :email existe dans la BD  ddd@gmail.com
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 4513
+logBD----: etudiant avec ce matricule n'existe pas 4513
+logBD--- : email n'existe pas ddjd@gmail.com
+LogBD : d�but recherche de id universit� dans la base de donn�e
+LogBD : universit� r�cup�r�e
+log : ajout dans la BD r�ussi de l'�tudiant  du Matricule4513
+Log: Fin de l'opiration d'ajout de l'utudiant avec matricule 4513
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 45113
+logBD----: etudiant avec ce matricule n'existe pas 45113
+logBD--- : email n'existe pas ddtjd@gmail.com
+LogBD : d�but recherche de id universit� dans la base de donn�e
+LogBD : universit� r�cup�r�e
+log : ajout dans la BD r�ussi de l'�tudiant  du Matricule45113
+Log: Fin de l'opiration d'ajout de l'utudiant avec matricule 45113
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 4
+logBD--- :etudiant avec ce matricule existe d�ja dans la BD  4
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 45113
+logBD--- :etudiant avec ce matricule existe d�ja dans la BD  45113
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 4
+logBD--- :etudiant avec ce matricule existe d�ja dans la BD  4
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 0
+logBD----: etudiant avec ce matricule n'existe pas 0
+logBD--- : email n'existe pas dg
+LogBD : d�but recherche de id universit� dans la base de donn�e
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 1
+logBD--- :etudiant avec ce matricule existe d�ja dans la BD  1
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 41
+logBD----: etudiant avec ce matricule n'existe pas 41
+logBD--- : email n'existe pas dc
+LogBD : d�but recherche de id universit� dans la base de donn�e
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 4
+logBD--- :etudiant avec ce matricule existe d�ja dans la BD  4
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 58587
+logBD----: etudiant avec ce matricule n'existe pas 58587
+logBD--- : email n'existe pas gh
+LogBD : d�but recherche de id universit� dans la base de donn�e
+LogBD : universit� r�cup�r�e
+log : ajout dans la BD r�ussi de l'�tudiant  du Matricule58587
+Log: Fin de l'opiration d'ajout de l'utudiant avec matricule 58587
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 234525
+logBD----: etudiant avec ce matricule n'existe pas 234525
+logBD--- : email n'existe pas ilj
+LogBD : d�but recherche de id universit� dans la base de donn�e
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 234525
+logBD----: etudiant avec ce matricule n'existe pas 234525
+logBD--- : email n'existe pas ilj
+LogBD : d�but recherche de id universit� dans la base de donn�e
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 234525
+logBD----: etudiant avec ce matricule n'existe pas 234525
+logBD--- : email n'existe pas ilj
+LogBD : d�but recherche de id universit� dans la base de donn�e
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 45
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 45
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 12
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 1
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 1
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 512
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 512
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 12
+logBD--- :etudiant avec ce matricule existe d�ja dans la BD  12
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 2
+logBD--- :etudiant avec ce matricule existe d�ja dans la BD  2
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 2
+logBD--- :etudiant avec ce matricule existe d�ja dans la BD  2
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 4224552
+logBD----: etudiant avec ce matricule n'existe pas 4224552
+logBD--- : email n'existe pas dgr
+LogBD : d�but recherche de id universit� dans la base de donn�e
+Log: debut de l'opiration d'ajout de l'etudiant avec matricule 887863
+logBD----: etudiant avec ce matricule n'existe pas 887863
+logBD--- : email n'existe pas fsdf
+LogBD : d�but recherche de id universit� dans la base de donn�e

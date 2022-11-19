@@ -145,8 +145,8 @@ public class ViewInscription extends JFrame implements IViewInscription{
 	}
 	
 	
-	public int getMatricule(){
-		return Integer.parseInt( textfield_matricule.getText());
+	public String getMatricule(){
+		return textfield_matricule.getText();
 	}
 	
 	public String getNom() {
@@ -165,8 +165,8 @@ public class ViewInscription extends JFrame implements IViewInscription{
 		return textfield_pwd.getText();
 	}
 	
-	public int getId_universite () {
-		return  Integer.parseInt(textfield_id_universite.getText());
+	public String getId_universite () {
+		return  textfield_id_universite.getText();
 	}
 	
 	public void setMessageBox(String message) {
