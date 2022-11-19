@@ -38,37 +38,5 @@ public class JournalFichierMessages implements IJournal {
 		 
 		
 	}
-/*
-	
-	public JournalFichierMessages() {
-		try {
-			File file_massg = new File("messages.txt");
-		      if (file_massg.createNewFile()) {
-		        System.out.println("File created: " + file_massg.getName());
-		      }  
-		      System.out.println(file_massg.getPath());
-		  	} catch (IOException e) {
-				System.out.println("An error occurred.");
-				e.printStackTrace();
-			}
-	}
-	@Override
-	public void outPut_Msg(String message){
-		
-		try {
-			FileWriter fileWriter = new FileWriter("messages.txt");
-			BufferedWriter info = new BufferedWriter(fileWriter);
-			info.write(String.format(message));
-			info.newLine();
-			info.close();
-			fileWriter.close();
-			
-			
-		} catch (IOException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
-		}
-		     
-	}
-*/
+ 
 }
