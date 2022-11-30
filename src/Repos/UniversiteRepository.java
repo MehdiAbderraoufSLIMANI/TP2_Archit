@@ -46,7 +46,7 @@ public class UniversiteRepository implements IUniversiteRepository {
 	public int initialiseNmbLivre(Universite univ){
 		Package pac = new DetermineThePackage().typeOfPackage(univ.getPack());
 		 
-		return pac.getBoune();
+		return pac.getNmbLivre();
 	}
 	
 	public int addingBounes(Universite univ) {
