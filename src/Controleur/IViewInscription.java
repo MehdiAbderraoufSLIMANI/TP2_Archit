@@ -12,7 +12,7 @@ public interface IViewInscription {
 	public String getPwd();
 	public String getId_universite();
 	public void setMessageBox(String message);
-	public void setactionListener(ActionListener actionListener);
+	public void setActionListener(ActionListener actionListener);
 	public void delete_info();
 	public JButton Submit();
 	public JButton annuler();

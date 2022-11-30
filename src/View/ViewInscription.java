@@ -14,12 +14,9 @@ public class ViewInscription extends JFrame implements IViewInscription{
 	private JTextField textfield_matricule ;
 	private JTextField textfield_email ;
 	private JTextField textfield_pwd ;
-	private JTextField textfield_id_universite ;
-	private JLabel massages_Box;
+	private JTextField textfield_id_universite ; 
 	private JButton btnSubmit ;
-	private JButton btnAnnuler ;
-	//private JButton btnBonus ;
-	
+	private JButton btnAnnuler ; 
 	public ViewInscription() {
 		
 		  this.setTitle("l'inscription"); //sets title of frame
@@ -124,22 +121,7 @@ public class ViewInscription extends JFrame implements IViewInscription{
 		  btnAnnuler= new JButton("annuler");
 		  panel_btn.add(btnAnnuler);
 
-/****************************btnAnnuler********************************************/	
-		  /*
-		  JPanel panel_btnBonus = new JPanel(new GridLayout(1, 1));
-		  panel_btnBonus.setBackground(null);
-		  this.add(panel_btnBonus);
-		  btnBonus= new JButton("ajouter un bonus");
-		  */
-/****************************massages_Box********************************************/
-		  
-		  JPanel panel_massages_Box= new JPanel(new GridLayout(1, 1));
-		  panel_massages_Box.setBackground(null);
-		  this.add(panel_massages_Box);
-		  massages_Box= new JLabel("", SwingConstants.CENTER);
-		  massages_Box.setForeground(new Color(255,255,255));
-		  panel_massages_Box.add(massages_Box);
-		  
+ 
 		  this.setVisible(true); 
 		
 	}
@@ -174,7 +156,7 @@ public class ViewInscription extends JFrame implements IViewInscription{
 		 
 	}
 	
-	public void setactionListener(ActionListener actionListener) {
+	public void setActionListener(ActionListener actionListener) {
 		
 
 		btnSubmit.addActionListener(actionListener);
@@ -197,12 +179,7 @@ public class ViewInscription extends JFrame implements IViewInscription{
 	public JButton annuler() {
 		return btnAnnuler;
 	}
-	
-	/*public JButton ajoutBuns() {
-		
-		return btnBonus;
-		
-	}*/
+ 
  
 
 }

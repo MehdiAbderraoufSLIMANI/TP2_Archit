@@ -11,7 +11,7 @@ public class ControleurInscription implements ActionListener {
 	public ControleurInscription( IViewInscription viewInscription ,EtudiantService serv) {
 	 
 		this.vi = viewInscription;
-		vi.setactionListener(this);
+		vi.setActionListener(this);
 		this.serv = serv;
 	}
 
